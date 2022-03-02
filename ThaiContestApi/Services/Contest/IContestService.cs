@@ -1,6 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using ThaiContestApi.Models;
+﻿using System.Collections.Generic;
+using ThaiContestApi.Models.Entity;
 
 namespace ThaiContestApi.Services
 {

@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
-using ThaiContestApi.Models;
+using ThaiContestApi.Models.Entity;
 using ThaiContestApi.Services;
 
 namespace ThaiContestApi.Controllers
@@ -25,7 +22,7 @@ namespace ThaiContestApi.Controllers
         }
 
         [HttpGet("{id}")]
-        public Contest Get(string id)
+        public ActionResult<Contest> Get(string id)
         {
             return _contestService.FindById(id);
         }
