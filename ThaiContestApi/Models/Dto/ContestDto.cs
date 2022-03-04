@@ -1,9 +1,10 @@
-﻿namespace ThaiContestApi.Models.Dto
+﻿using System;
+
+namespace ThaiContestApi.Models.Dto
 {
     public class ContestDto
     {
-        public ContestDto()
-        {
-        }
+        public string Name { get; set; }
+        public DateTime OccursAt { get; set; }
     }
 }

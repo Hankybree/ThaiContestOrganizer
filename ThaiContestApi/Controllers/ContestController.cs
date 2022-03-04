@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using ThaiContestApi.Models.Entity;
-using ThaiContestApi.Services;
+using ThaiContestApi.Models.Dto;
+using ThaiContestApi.Services.ContestNs;
 
 namespace ThaiContestApi.Controllers
 {
@@ -16,25 +17,25 @@ namespace ThaiContestApi.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<Contest> Get()
+        public async Task<IEnumerable<ContestDto>> Get()
         {
-            return _contestService.FindAll();
+            return await _contestService.FindAll();
         }
 
         [HttpGet("{id}")]
-        public ActionResult<Contest> Get(string id)
+        public async Task<ActionResult<ContestDto>> Get(string id)
         {
-            return _contestService.FindById(id);
+            return await _contestService.FindById(id);
         }
 
         [HttpPost]
-        public void Post([FromBody] Contest contest)
+        public async Task Post([FromBody] ContestDto contest)
         {
-            _contestService.Create(contest);
+            await _contestService.Create(contest);
         }
 
         [HttpPut("{id}")]
-        public void Put(string id, [FromBody] Contest contest)
+        public void Put(string id, [FromBody] ContestDto contest)
         {
             _contestService.Update(id, contest);
         }

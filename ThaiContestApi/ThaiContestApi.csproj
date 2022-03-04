@@ -21,6 +21,9 @@
     <None Remove="Services\Contest\Impl\" />
     <None Remove="Middlewares\" />
     <None Remove="Exceptions\" />
+    <None Remove="Config\" />
+    <None Remove="Repository\Contest\" />
+    <None Remove="Repository\Mongo\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
@@ -35,6 +38,9 @@
     <Folder Include="Models\Dto\" />
     <Folder Include="Middlewares\" />
     <Folder Include="Exceptions\" />
-    <Folder Include="Services\Contest\" />
+    <Folder Include="Services\ContestNs\" />
+    <Folder Include="Config\" />
+    <Folder Include="Repository\ContestNs\" />
+    <Folder Include="Repository\MongoConnectionNs\" />
   </ItemGroup>
 </Project>

@@ -14,5 +14,13 @@ namespace ThaiContestApi.Models.Entity
 
         public string Name { get; set; }
         public DateTime OccursAt { get; set; }
+
+        public Contest(string name, DateTime occursAt)
+        {
+            CreatedAt = DateTime.Now;
+
+            Name = name;
+            OccursAt = occursAt;
+        }
     }
 }
