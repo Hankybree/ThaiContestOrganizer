@@ -32,8 +32,8 @@ namespace ThaiContestApi
             services.AddSingleton<IMongoConfig>(sp => sp.GetRequiredService<IOptions<MongoConfig>>().Value);
             services.AddSingleton<IMongoRepository, MongoRepository>();
 
-            services.AddSingleton<IContestService, ContestService>();
-            services.AddSingleton<IContestRepository, ContestRepository>();
+            services.AddTransient<IContestService, ContestService>();
+            services.AddTransient<IContestRepository, ContestRepository>();
 
             services.AddSwaggerGen(c =>
             {
