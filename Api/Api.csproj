@@ -45,7 +45,7 @@
     <Folder Include="Services\ContestNs\" />
     <Folder Include="Config\" />
     <Folder Include="Repository\ContestNs\" />
-    <Folder Include="Repository\MongoReposiNs\" />
+    <Folder Include="Repository\MongoConnectionNs\" />
     <Folder Include="Services\Security\" />
     <Folder Include="Services\Security\Cryptography\" />
     <Folder Include="Models\Entity\UserNs\" />
