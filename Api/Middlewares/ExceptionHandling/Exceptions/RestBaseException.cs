@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Net;
 
-namespace Api.Exceptions
+namespace Api.Middlewares.ExceptionHandling.Exceptions
 {
     public abstract class RestBaseException : Exception
     {

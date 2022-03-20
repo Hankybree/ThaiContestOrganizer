@@ -4,9 +4,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Api.Models.Dto;
-using Api.Exceptions;
+using Api.Middlewares.ExceptionHandling.Exceptions;
 
-namespace Api.Middlewares
+namespace Api.Middlewares.ExceptionHandling
 {
     public class ExceptionHandlingMiddleware
     {

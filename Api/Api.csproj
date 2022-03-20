@@ -21,7 +21,6 @@
     <None Remove="Services\Contest\" />
     <None Remove="Services\Contest\Impl\" />
     <None Remove="Middlewares\" />
-    <None Remove="Exceptions\" />
     <None Remove="Config\" />
     <None Remove="Repository\Contest\" />
     <None Remove="Repository\Mongo\" />
@@ -29,6 +28,8 @@
     <None Remove="Services\Security\Cryptography\" />
     <None Remove="Models\Entity\User\" />
     <None Remove="Config\Mongo\" />
+    <None Remove="Middlewares\ExceptionHandling\" />
+    <None Remove="Middlewares\ExceptionHandling\Exceptions\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
@@ -42,13 +43,14 @@
     <Folder Include="Models\Entity\" />
     <Folder Include="Models\Dto\" />
     <Folder Include="Middlewares\" />
-    <Folder Include="Exceptions\" />
     <Folder Include="Services\Contest\" />
     <Folder Include="Config\" />
     <Folder Include="Repository\Contest\" />
     <Folder Include="Services\Security\" />
     <Folder Include="Services\Security\Cryptography\" />
-    <Folder Include="Models\Entity\UserNs\" />
+    <Folder Include="Models\Entity\User\" />
     <Folder Include="Config\Mongo\" />
+    <Folder Include="Middlewares\ExceptionHandling\" />
+    <Folder Include="Middlewares\ExceptionHandling\Exceptions\" />
   </ItemGroup>
 </Project>

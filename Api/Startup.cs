@@ -1,15 +1,14 @@
-﻿using System;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
-using Api.Middlewares;
 using Api.Repository.ContestNs;
 using Api.Services.ContestNs;
 using Api.Config.Mongo;
+using Api.Middlewares.ExceptionHandling;
 
 namespace Api
 {
