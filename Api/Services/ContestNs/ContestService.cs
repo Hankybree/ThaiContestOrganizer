@@ -41,7 +41,7 @@ namespace ThaiContestApi.Services.ContestNs
 
         public async Task Create(ContestDto contestDto)
         {
-            await _contestRepository.Create(new Contest(contestDto.Name, contestDto.OccursAt));
+            await _contestRepository.Create(new Contest(DateTime.Now, null, contestDto.Name, contestDto.OccursAt));
         }
 
         public async Task Update(string id, ContestDto contestDto)
