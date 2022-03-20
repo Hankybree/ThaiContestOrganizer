@@ -1,6 +1,7 @@
 ﻿using MongoDB.Bson.Serialization.Conventions;
 using MongoDB.Driver;
 using Api.Models.Entity;
+using System;
 
 namespace Api.Config.Mongo
 {
@@ -11,15 +12,19 @@ namespace Api.Config.Mongo
 
         private readonly IMongoCollection<Contest> _contestColletion;
 
-        public MongoConfig(IMongoSettings mongoConfig)
+        public MongoConfig(IMongoSettings mongoSettings)
         {
             ConventionPack conventionPack = new() { new CamelCaseElementNameConvention() };
             ConventionRegistry.Register("camelCase", conventionPack, t => true);
 
-            _client = new MongoClient(mongoConfig.ConnectionString);
-            _database = _client.GetDatabase(mongoConfig.DatabaseName);
+            Console.WriteLine(mongoSettings.ConnectionString);
+            Console.WriteLine(mongoSettings.ContestCollection);
+            Console.WriteLine(mongoSettings.DatabaseName);
 
-            _contestColletion = _database.GetCollection<Contest>(mongoConfig.ContestCollection);
+            _client = new MongoClient(mongoSettings.ConnectionString);
+            _database = _client.GetDatabase(mongoSettings.DatabaseName);
+
+            _contestColletion = _database.GetCollection<Contest>(mongoSettings.ContestCollection);
         }
 
         public IMongoCollection<Contest> ContestCollection => _contestColletion;

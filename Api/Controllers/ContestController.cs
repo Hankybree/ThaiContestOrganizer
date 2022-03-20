@@ -4,46 +4,46 @@ using Microsoft.AspNetCore.Mvc;
 using Api.Models.Dto;
 using Api.Services.ContestNs;
 
-namespace Api.Controllers
+namespace Api.Controllers;
+
+[Route("api/v1/contest")]
+public class ContestController : Controller
 {
-    [Route("api/v1/contest")]
-    public class ContestController : Controller
+    private readonly IContestService _contestService;
+
+    public ContestController(IContestService contestService)
     {
-        private readonly IContestService _contestService;
+        _contestService = contestService;
+    }
 
-        public ContestController(IContestService contestService)
-        {
-            _contestService = contestService;
-        }
+    [HttpGet]
+    public async Task<IEnumerable<ContestDto>> Get()
+    {
+        return await _contestService.FindAll();
+    }
 
-        [HttpGet]
-        public async Task<IEnumerable<ContestDto>> Get()
-        {
-            return await _contestService.FindAll();
-        }
+    [HttpGet("{id}")]
+    public async Task<ActionResult<ContestDto>> Get(string id)
+    {
+        return await _contestService.FindById(id);
+    }
 
-        [HttpGet("{id}")]
-        public async Task<ActionResult<ContestDto>> Get(string id)
-        {
-            return await _contestService.FindById(id);
-        }
+    [HttpPost]
+    public async Task Post([FromBody] ContestDto contest)
+    {
+        await _contestService.Create(contest);
+    }
 
-        [HttpPost]
-        public async Task Post([FromBody] ContestDto contest)
-        {
-            await _contestService.Create(contest);
-        }
+    [HttpPut("{id}")]
+    public void Put(string id, [FromBody] ContestDto contest)
+    {
+        _contestService.Update(id, contest);
+    }
 
-        [HttpPut("{id}")]
-        public void Put(string id, [FromBody] ContestDto contest)
-        {
-            _contestService.Update(id, contest);
-        }
-
-        [HttpDelete("{id}")]
-        public void Delete(string id)
-        {
-            _contestService.Delete(id);
-        }
+    [HttpDelete("{id}")]
+    public void Delete(string id)
+    {
+        _contestService.Delete(id);
     }
 }
+

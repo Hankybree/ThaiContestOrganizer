@@ -9,6 +9,7 @@ using Api.Repository.ContestNs;
 using Api.Services.ContestNs;
 using Api.Config.Mongo;
 using Api.Middlewares.ExceptionHandling;
+using System;
 
 namespace Api
 {
