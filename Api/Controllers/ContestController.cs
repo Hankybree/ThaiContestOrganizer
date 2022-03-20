@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using ThaiContestApi.Models.Dto;
-using ThaiContestApi.Services.ContestNs;
+using Api.Models.Dto;
+using Api.Services.ContestNs;
 
-namespace ThaiContestApi.Controllers
+namespace Api.Controllers
 {
     [Route("api/v1/contest")]
     public class ContestController : Controller

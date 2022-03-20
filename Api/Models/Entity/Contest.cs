@@ -2,7 +2,7 @@
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
-namespace ThaiContestApi.Models.Entity
+namespace Api.Models.Entity
 {
     public class Contest
     {

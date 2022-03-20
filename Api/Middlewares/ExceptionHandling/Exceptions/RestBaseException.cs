@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Net;
 
-namespace ThaiContestApi.Exceptions
+namespace Api.Middlewares.ExceptionHandling.Exceptions
 {
     public abstract class RestBaseException : Exception
     {

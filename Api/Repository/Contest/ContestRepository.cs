@@ -2,18 +2,18 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using MongoDB.Driver;
-using ThaiContestApi.Models.Entity;
-using ThaiContestApi.Repository.MongoConnectionNs;
+using Api.Models.Entity;
+using Api.Config.Mongo;
 
-namespace ThaiContestApi.Repository.ContestNs
+namespace Api.Repository.ContestNs
 {
     public class ContestRepository : IContestRepository
     {
         private readonly IMongoCollection<Contest> _contestCollection;
 
-        public ContestRepository(IMongoRepository mongoRepository)
+        public ContestRepository(IMongoConfig mongoConfig)
         {
-            _contestCollection = mongoRepository.ContestCollection;
+            _contestCollection = mongoConfig.ContestCollection;
         }
 
         public async Task<IEnumerable<Contest>> FindAll()

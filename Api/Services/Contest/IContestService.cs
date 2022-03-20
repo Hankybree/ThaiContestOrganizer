@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using ThaiContestApi.Models.Dto;
-using ThaiContestApi.Models.Entity;
+using Api.Models.Dto;
+using Api.Models.Entity;
 
-namespace ThaiContestApi.Services.ContestNs
+namespace Api.Services.ContestNs
 {
     public interface IContestService
     {

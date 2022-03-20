@@ -1,4 +1,4 @@
-﻿namespace ThaiContestApi.Models.Dto
+﻿namespace Api.Models.Dto
 {
     public class ErrorDto
     {

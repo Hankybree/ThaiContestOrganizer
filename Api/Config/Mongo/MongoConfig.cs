@@ -1,19 +1,17 @@
-﻿using System;
-using MongoDB.Bson.Serialization.Conventions;
+﻿using MongoDB.Bson.Serialization.Conventions;
 using MongoDB.Driver;
-using ThaiContestApi.Config;
-using ThaiContestApi.Models.Entity;
+using Api.Models.Entity;
 
-namespace ThaiContestApi.Repository.MongoConnectionNs
+namespace Api.Config.Mongo
 {
-    public class MongoRepository : IMongoRepository
+    public class MongoConfig : IMongoConfig
     {
         private readonly MongoClient _client;
         private readonly IMongoDatabase _database;
 
         private readonly IMongoCollection<Contest> _contestColletion;
 
-        public MongoRepository(IMongoConfig mongoConfig)
+        public MongoConfig(IMongoSettings mongoConfig)
         {
             ConventionPack conventionPack = new() { new CamelCaseElementNameConvention() };
             ConventionRegistry.Register("camelCase", conventionPack, t => true);

@@ -1,7 +1,7 @@
 ﻿using System;
-using ThaiContestApi.Models.Entity.UserNs;
+using Api.Models.Entity.UserNs;
 
-namespace ThaiContestApi.Services.Security.Cryptography
+namespace Api.Services.Security.Cryptography
 {
     public interface IPasswordHashService
     {

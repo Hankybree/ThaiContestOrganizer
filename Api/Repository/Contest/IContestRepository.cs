@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using ThaiContestApi.Models.Entity;
+using Api.Models.Entity;
 
-namespace ThaiContestApi.Repository.ContestNs
+namespace Api.Repository.ContestNs
 {
     public interface IContestRepository
     {

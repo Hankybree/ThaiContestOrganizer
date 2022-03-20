@@ -1,18 +1,16 @@
-﻿using System;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
-using ThaiContestApi.Config;
-using ThaiContestApi.Middlewares;
-using ThaiContestApi.Repository.ContestNs;
-using ThaiContestApi.Repository.MongoConnectionNs;
-using ThaiContestApi.Services.ContestNs;
+using Api.Repository.ContestNs;
+using Api.Services.ContestNs;
+using Api.Config.Mongo;
+using Api.Middlewares.ExceptionHandling;
 
-namespace ThaiContestApi
+namespace Api
 {
     public class Startup
     {
@@ -28,9 +26,9 @@ namespace ThaiContestApi
         {
             services.AddControllers();
 
-            services.Configure<MongoConfig>(Configuration.GetSection(nameof(MongoConfig)));
-            services.AddSingleton<IMongoConfig>(sp => sp.GetRequiredService<IOptions<MongoConfig>>().Value);
-            services.AddSingleton<IMongoRepository, MongoRepository>();
+            services.Configure<MongoSettings>(Configuration.GetSection(nameof(MongoSettings)));
+            services.AddSingleton<IMongoSettings>(sp => sp.GetRequiredService<IOptions<MongoSettings>>().Value);
+            services.AddSingleton<IMongoConfig, MongoConfig>();
 
             services.AddTransient<IContestService, ContestService>();
             services.AddTransient<IContestRepository, ContestRepository>();
