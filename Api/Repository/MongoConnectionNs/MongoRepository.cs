@@ -1,4 +1,5 @@
 ﻿using System;
+using MongoDB.Bson.Serialization.Conventions;
 using MongoDB.Driver;
 using ThaiContestApi.Config;
 using ThaiContestApi.Models.Entity;
@@ -14,6 +15,9 @@ namespace ThaiContestApi.Repository.MongoConnectionNs
 
         public MongoRepository(IMongoConfig mongoConfig)
         {
+            ConventionPack conventionPack = new() { new CamelCaseElementNameConvention() };
+            ConventionRegistry.Register("camelCase", conventionPack, t => true);
+
             _client = new MongoClient(mongoConfig.ConnectionString);
             _database = _client.GetDatabase(mongoConfig.DatabaseName);
 

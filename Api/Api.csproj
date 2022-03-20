@@ -8,6 +8,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'ThaiContestApi' " />
   <ItemGroup>
     <None Remove="Swashbuckle.AspNetCore" />
     <None Remove="Controllers\" />
@@ -44,7 +45,7 @@
     <Folder Include="Services\ContestNs\" />
     <Folder Include="Config\" />
     <Folder Include="Repository\ContestNs\" />
-    <Folder Include="Repository\MongoConnectionNs\" />
+    <Folder Include="Repository\MongoReposiNs\" />
     <Folder Include="Services\Security\" />
     <Folder Include="Services\Security\Cryptography\" />
     <Folder Include="Models\Entity\UserNs\" />
