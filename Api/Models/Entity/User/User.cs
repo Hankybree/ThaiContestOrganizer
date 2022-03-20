@@ -2,7 +2,7 @@
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
-namespace ThaiContestApi.Models.Entity.UserNs
+namespace Api.Models.Entity.UserNs
 {
     public class User
     {

@@ -1,5 +1,5 @@
 ﻿using System;
-namespace ThaiContestApi.Models.Entity.UserNs
+namespace Api.Models.Entity.UserNs
 {
     public class Password
     {

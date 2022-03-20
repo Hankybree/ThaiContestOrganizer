@@ -3,10 +3,10 @@ using System.Net;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
-using ThaiContestApi.Models.Dto;
-using ThaiContestApi.Exceptions;
+using Api.Models.Dto;
+using Api.Exceptions;
 
-namespace ThaiContestApi.Middlewares
+namespace Api.Middlewares
 {
     public class ExceptionHandlingMiddleware
     {

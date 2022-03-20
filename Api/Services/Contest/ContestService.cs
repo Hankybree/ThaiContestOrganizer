@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using ThaiContestApi.Models.Dto;
-using ThaiContestApi.Models.Entity;
-using ThaiContestApi.Repository.ContestNs;
+using Api.Models.Dto;
+using Api.Models.Entity;
+using Api.Repository.ContestNs;
 
-namespace ThaiContestApi.Services.ContestNs
+namespace Api.Services.ContestNs
 {
     public class ContestService : IContestService
     {

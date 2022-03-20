@@ -1,6 +1,6 @@
 ﻿using System.Net;
 
-namespace ThaiContestApi.Exceptions
+namespace Api.Exceptions
 {
     public class NotFoundException : RestBaseException
     {

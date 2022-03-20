@@ -1,6 +1,6 @@
-﻿namespace ThaiContestApi.Config
+﻿namespace Api.Config.Mongo
 {
-    public interface IMongoConfig
+    public interface IMongoSettings
     {
         string ConnectionString { get; set; }
         string DatabaseName { get; set; }
