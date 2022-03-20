@@ -1,11 +1,9 @@
-﻿using System;
-using MongoDB.Driver;
+﻿using MongoDB.Driver;
 using Api.Models.Entity;
 
-namespace Api.Config.Mongo
+namespace Api.Config.Mongo;
+
+public interface IMongoConfig
 {
-    public interface IMongoConfig
-    {
-        IMongoCollection<Contest> ContestCollection { get; }
-    }
+    IMongoCollection<Contest> ContestCollection { get; }
 }

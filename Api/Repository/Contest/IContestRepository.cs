@@ -2,18 +2,17 @@
 using System.Threading.Tasks;
 using Api.Models.Entity;
 
-namespace Api.Repository.ContestNs
+namespace Api.Repository.ContestNs;
+
+public interface IContestRepository
 {
-    public interface IContestRepository
-    {
-        Task<IEnumerable<Contest>> FindAll();
+    Task<IEnumerable<Contest>> FindAll();
 
-        Task<Contest> FindById(string id);
+    Task<Contest> FindById(string id);
 
-        Task Create(Contest contest);
+    Task Create(Contest contest);
 
-        Task Update(string id, Contest contest);
+    Task Update(string id, Contest contest);
 
-        Task Delete(string id);
-    }
+    Task Delete(string id);
 }

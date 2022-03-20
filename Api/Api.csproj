@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <UserSecretsId>787b6bb4-537b-4c23-b68f-3dc1f8b6f37a</UserSecretsId>
   </PropertyGroup>
 
@@ -11,46 +11,12 @@
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'ThaiContestApi' " />
   <ItemGroup>
     <None Remove="Swashbuckle.AspNetCore" />
-    <None Remove="Controllers\" />
-    <None Remove="Services\" />
-    <None Remove="Repository\" />
-    <None Remove="Models\" />
     <None Remove="MongoDB.Driver" />
-    <None Remove="Models\Entity\" />
-    <None Remove="Models\Dto\" />
-    <None Remove="Services\Contest\" />
     <None Remove="Services\Contest\Impl\" />
-    <None Remove="Middlewares\" />
-    <None Remove="Config\" />
-    <None Remove="Repository\Contest\" />
     <None Remove="Repository\Mongo\" />
-    <None Remove="Services\Security\" />
-    <None Remove="Services\Security\Cryptography\" />
-    <None Remove="Models\Entity\User\" />
-    <None Remove="Config\Mongo\" />
-    <None Remove="Middlewares\ExceptionHandling\" />
-    <None Remove="Middlewares\ExceptionHandling\Exceptions\" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
-    <PackageReference Include="MongoDB.Driver" Version="2.14.1" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-    <Folder Include="Services\" />
-    <Folder Include="Repository\" />
-    <Folder Include="Models\" />
-    <Folder Include="Models\Entity\" />
-    <Folder Include="Models\Dto\" />
-    <Folder Include="Middlewares\" />
-    <Folder Include="Services\Contest\" />
-    <Folder Include="Config\" />
-    <Folder Include="Repository\Contest\" />
-    <Folder Include="Services\Security\" />
-    <Folder Include="Services\Security\Cryptography\" />
-    <Folder Include="Models\Entity\User\" />
-    <Folder Include="Config\Mongo\" />
-    <Folder Include="Middlewares\ExceptionHandling\" />
-    <Folder Include="Middlewares\ExceptionHandling\Exceptions\" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.0" />
+    <PackageReference Include="MongoDB.Driver" Version="2.15.0" />
   </ItemGroup>
 </Project>

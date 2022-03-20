@@ -6,56 +6,55 @@ using Microsoft.AspNetCore.Http;
 using Api.Models.Dto;
 using Api.Middlewares.ExceptionHandling.Exceptions;
 
-namespace Api.Middlewares.ExceptionHandling
+namespace Api.Middlewares.ExceptionHandling;
+
+public class ExceptionHandlingMiddleware
 {
-    public class ExceptionHandlingMiddleware
+    private readonly RequestDelegate _next;
+
+    public ExceptionHandlingMiddleware(RequestDelegate next)
     {
-        private readonly RequestDelegate _next;
+        _next = next;
+    }
 
-        public ExceptionHandlingMiddleware(RequestDelegate next)
+    public async Task InvokeAsync(HttpContext httpContext)
+    {
+        try
         {
-            _next = next;
+            await _next(httpContext);
         }
-
-        public async Task InvokeAsync(HttpContext httpContext)
+        catch(RestBaseException ex)
         {
-            try
-            {
-                await _next(httpContext);
-            }
-            catch(RestBaseException ex)
-            {
-                await HandleException(httpContext, ex.Status, ex.Message);
-            }
-            catch(Exception ex)
-            {
-                await HandleException(httpContext, HttpStatusCode.InternalServerError, ex.Message);
-            }
+            await HandleException(httpContext, ex.Status, ex.Message);
         }
-
-        private async Task HandleException(HttpContext httpContext, HttpStatusCode status, string message)
+        catch(Exception ex)
         {
-            int statusCode = (int)status;
-            string reason = status.ToString();
-
-            httpContext.Response.ContentType = "application/json";
-            httpContext.Response.StatusCode = statusCode;
-
-            await httpContext.Response.WriteAsJsonAsync(new ErrorDto()
-            {
-                StatusCode = statusCode,
-                Reason = reason,
-                Message = message
-            });
+            await HandleException(httpContext, HttpStatusCode.InternalServerError, ex.Message);
         }
     }
 
-    public static class ExceptionHandlingMiddlewareExtenstion
+    private async Task HandleException(HttpContext httpContext, HttpStatusCode status, string message)
     {
-        public static IApplicationBuilder UseExceptionHandlingMiddleware(
-            this IApplicationBuilder builder)
+        int statusCode = (int)status;
+        string reason = status.ToString();
+
+        httpContext.Response.ContentType = "application/json";
+        httpContext.Response.StatusCode = statusCode;
+
+        await httpContext.Response.WriteAsJsonAsync(new ErrorDto()
         {
-            return builder.UseMiddleware<ExceptionHandlingMiddleware>();
-        }
+            StatusCode = statusCode,
+            Reason = reason,
+            Message = message
+        });
+    }
+}
+
+public static class ExceptionHandlingMiddlewareExtenstion
+{
+    public static IApplicationBuilder UseExceptionHandlingMiddleware(
+        this IApplicationBuilder builder)
+    {
+        return builder.UseMiddleware<ExceptionHandlingMiddleware>();
     }
 }

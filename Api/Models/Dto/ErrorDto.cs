@@ -1,9 +1,8 @@
-﻿namespace Api.Models.Dto
+﻿namespace Api.Models.Dto;
+
+public class ErrorDto
 {
-    public class ErrorDto
-    {
-        public int StatusCode { get; set; }
-        public string Reason { get; set; }
-        public string Message { get; set; }
-    }
+    public int StatusCode { get; set; }
+    public string Reason { get; set; }
+    public string Message { get; set; }
 }

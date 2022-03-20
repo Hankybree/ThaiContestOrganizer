@@ -1,10 +1,9 @@
 ﻿using System;
 
-namespace Api.Models.Dto
+namespace Api.Models.Dto;
+
+public class ContestDto
 {
-    public class ContestDto
-    {
-        public string Name { get; set; }
-        public DateTime OccursAt { get; set; }
-    }
+    public string Name { get; set; }
+    public DateTime OccursAt { get; set; }
 }
