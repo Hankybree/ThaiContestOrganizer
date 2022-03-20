@@ -1,13 +1,13 @@
 ﻿using Api;
 using Microsoft.AspNetCore.Builder;
 
-var builder = WebApplication.CreateBuilder(args);
+WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
-var startup = new Startup(builder.Configuration);
+Startup startup = new Startup(builder.Configuration);
 
 startup.ConfigureServices(builder.Services);
 
-var app = builder.Build();
+WebApplication app = builder.Build();
 
 startup.Configure(app, app.Environment);
 

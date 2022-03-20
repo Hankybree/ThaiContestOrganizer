@@ -1,9 +1,8 @@
-﻿namespace Api.Config.Mongo
+﻿namespace Api.Config.Mongo;
+
+public interface IMongoSettings
 {
-    public interface IMongoSettings
-    {
-        string ConnectionString { get; set; }
-        string DatabaseName { get; set; }
-        string ContestCollection { get; set; }
-    }
+    string ConnectionString { get; set; }
+    string DatabaseName { get; set; }
+    string ContestCollection { get; set; }
 }
