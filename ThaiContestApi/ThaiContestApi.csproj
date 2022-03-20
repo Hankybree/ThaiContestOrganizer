@@ -47,6 +47,6 @@
     <Folder Include="Repository\MongoConnectionNs\" />
     <Folder Include="Services\Security\" />
     <Folder Include="Services\Security\Cryptography\" />
-    <Folder Include="Models\Entity\User\" />
+    <Folder Include="Models\Entity\UserNs\" />
   </ItemGroup>
 </Project>
