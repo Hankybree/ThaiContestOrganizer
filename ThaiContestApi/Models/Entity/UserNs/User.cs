@@ -14,5 +14,13 @@ namespace ThaiContestApi.Models.Entity.UserNs
 
         public string Email { get; set; }
         public Password Password { get; set; }
+        
+        public User(DateTime createdAt, DateTime updatedAt, string email, Password password)
+        {
+            CreatedAt = createdAt;
+            UpdatedAt = updatedAt;
+            Email = email;
+            Password = password;
+        }
     }
 }

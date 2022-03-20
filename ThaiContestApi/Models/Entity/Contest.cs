@@ -10,15 +10,15 @@ namespace ThaiContestApi.Models.Entity
         [BsonRepresentation(BsonType.ObjectId)]
         public string Id { get; set; }
         public DateTime CreatedAt { get; set; }
-        public DateTime UpdatedAt { get; set; }
+        public DateTime? UpdatedAt { get; set; }
 
         public string Name { get; set; }
         public DateTime OccursAt { get; set; }
 
-        public Contest(string name, DateTime occursAt)
+        public Contest(DateTime createdAt, DateTime? updatedAt, string name, DateTime occursAt)
         {
-            CreatedAt = DateTime.Now;
-
+            CreatedAt = createdAt;
+            UpdatedAt = updatedAt;
             Name = name;
             OccursAt = occursAt;
         }
