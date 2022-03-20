@@ -1,7 +1,7 @@
 ﻿using System;
 using Xunit;
 
-namespace Test
+namespace Test.Security.Cryptography
 {
     public class PasswordHashServiceTest
     {
