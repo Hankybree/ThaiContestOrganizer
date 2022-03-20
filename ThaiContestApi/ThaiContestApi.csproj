@@ -24,6 +24,9 @@
     <None Remove="Config\" />
     <None Remove="Repository\Contest\" />
     <None Remove="Repository\Mongo\" />
+    <None Remove="Services\Security\" />
+    <None Remove="Services\Security\Cryptography\" />
+    <None Remove="Models\Entity\User\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
@@ -42,5 +45,8 @@
     <Folder Include="Config\" />
     <Folder Include="Repository\ContestNs\" />
     <Folder Include="Repository\MongoConnectionNs\" />
+    <Folder Include="Services\Security\" />
+    <Folder Include="Services\Security\Cryptography\" />
+    <Folder Include="Models\Entity\User\" />
   </ItemGroup>
 </Project>
